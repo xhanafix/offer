@@ -1,0 +1,432 @@
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #ff6b6b;
+    --accent-color: #ffd166;
+    --dark-color: #2d3748;
+    --light-color: #f8f9fa;
+    --success-color: #48bb78;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    
+    /* Theme variables */
+    --bg-color: #f5f7fa;
+    --text-color: #2d3748;
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --header-bg: var(--primary-color);
+    --header-text: white;
+    --bonus-bg: #fff9e6;
+    --cta-bg: #f8f9fa;
+}
+
+.dark-theme {
+    --bg-color: #1a202c;
+    --text-color: #e2e8f0;
+    --card-bg: #2d3748;
+    --border-color: #4a5568;
+    --header-bg: #3a59e0;
+    --header-text: #e2e8f0;
+    --bonus-bg: #3c3520;
+    --cta-bg: #2d3748;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.input-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button i {
+    margin-left: 8px;
+}
+
+button:hover {
+    background-color: #3a59e0;
+    transform: translateY(-2px);
+}
+
+#generate-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+#offer-output {
+    margin-top: 30px;
+}
+
+.offer-container {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease;
+}
+
+.offer-header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.offer-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.offer-body {
+    padding: 30px;
+}
+
+.offer-section {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.offer-section:last-child {
+    border-bottom: none;
+}
+
+.offer-section h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.offer-section h3 i {
+    margin-right: 10px;
+}
+
+.offer-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.offer-section ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.offer-section ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.offer-section ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.bonus {
+    background-color: var(--bonus-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-color);
+    transition: background-color 0.3s ease;
+}
+
+.offer-cta {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--cta-bg);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+#urgency-element {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+#cta-button {
+    background-color: var(--secondary-color);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+}
+
+#cta-button:hover {
+    background-color: #ff5252;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.actions button {
+    flex: 1;
+    max-width: 200px;
+}
+
+#copy-btn {
+    background-color: var(--dark-color);
+}
+
+#copy-btn:hover {
+    background-color: #1a202c;
+}
+
+#regenerate-btn {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+#regenerate-btn:hover {
+    background-color: #ffc233;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.modal ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.modal li {
+    margin-bottom: 10px;
+}
+
+.modal code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .input-section, .offer-body {
+        padding: 20px;
+    }
+    
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .actions button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    transform: rotate(15deg);
+} 

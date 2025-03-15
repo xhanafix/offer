@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product/Service Offer Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <h1>Product/Service Offer Generator</h1>
+            <p>Create compelling offers using the Value Stack and Valuable Bonus formula</p>
+        </header>
+
+        <div class="input-section">
+            <div class="form-group">
+                <label for="product-input">Enter your product or service:</label>
+                <input type="text" id="product-input" placeholder="e.g., Smartwatch, Online Course, Consulting Service">
+            </div>
+            <div class="form-group">
+                <label for="price-input">Approximate price (RM):</label>
+                <input type="number" id="price-input" placeholder="e.g., 199" min="0">
+            </div>
+            <div class="form-group">
+                <label for="language-select">Language / Bahasa:</label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="ms">Bahasa Malaysia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="api-key">OpenRouter API Key:</label>
+                <input type="password" id="api-key" placeholder="Enter your OpenRouter API key">
+                <small>Your API key is stored locally and never sent to our servers</small>
+            </div>
+            <button id="generate-btn">Generate Offer <i class="fas fa-magic"></i></button>
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Crafting your perfect offer...</p>
+            </div>
+        </div>
+
+        <div id="offer-output" class="hidden">
+            <div class="offer-container">
+                <div class="offer-header">
+                    <h2 id="offer-headline">Your Compelling Offer Headline</h2>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-section">
+                        <h3><i class="fas fa-star"></i> Core Product/Service</h3>
+                        <p id="core-product"></p>
+                    </div>
+                    <div class="offer-section">
+                        <h3><i class="fas fa-layer-group"></i> Value Stack</h3>
+                        <ul id="value-stack"></ul>
+                    </div>
+                    <div class="offer-section bonus">
+                        <h3><i class="fas fa-gift"></i> Valuable Bonus</h3>
+                        <p id="valuable-bonus"></p>
+                    </div>
+                    <div class="offer-cta">
+                        <p id="urgency-element"></p>
+                        <button id="cta-button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <button id="copy-btn"><i class="fas fa-copy"></i> Copy Offer</button>
+                <button id="regenerate-btn"><i class="fas fa-redo"></i> Regenerate</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Powered by OpenRouter AI | <a href="#" id="instructions-link">API Instructions</a></p>
+    </footer>
+
+    <div id="instructions-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>OpenRouter API Instructions</h2>
+            <ol>
+                <li>Sign up for an account at <a href="https://openrouter.ai" target="_blank">OpenRouter.ai</a></li>
+                <li>Generate an API key from your dashboard</li>
+                <li>Copy and paste the API key into the "OpenRouter API Key" field</li>
+                <li>Your API key is stored in your browser's local storage for convenience</li>
+            </ol>
+            <p>This generator uses the <code>google/learnlm-1.5-pro-experimental:free</code> model.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
